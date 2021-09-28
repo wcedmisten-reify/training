@@ -44,8 +44,14 @@
 
 ;; Use destructuring to reference the first and second elements of
 ;; this vector and addthem
-[0 1 2 3 4]
+(def nums [0 1 2 3 4])
+
+(let [[a b & c] nums]
+  (+ a b))
 
 ;; Use destructuring to create the string "Jebediah is a butter churner"
-{:name "Jebediah"
- :occupation "butter churner"}
+(def test-map {:name "Jebediah"
+ :occupation "butter churner"})
+
+(let [{:keys [name occupation]} test-map]
+  (str name " is a " occupation))
