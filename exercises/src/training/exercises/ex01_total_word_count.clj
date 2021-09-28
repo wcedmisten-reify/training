@@ -13,4 +13,9 @@
 
 (defn total-words
   [x]
+  (count (s/split x #" "))
   )
+
+(println (total-words "the lazy dog jumped"))
+
+(println (total-words "the"))

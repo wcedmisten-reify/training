@@ -5,7 +5,7 @@
 ;; ========================================
 
 (+ 1 2)
-((or + -) 1 2)
+((or - + -) 1 2)
 ((or +) 1 2)
 
 
@@ -45,7 +45,9 @@
 
 ;; Exercise: write a function number-max that compares two numbers and returns
 ;; the larger.
-
+(defn number-max
+  [a b]
+  (max a b))
 
 
 ;; ========================================

@@ -98,8 +98,8 @@ training.exercises.ex02-using-data-types/failed-protagonist-names
 ;; You try:
 ;; * Add 5 numbers
 ;; * Multiply 3 numbers
-
-
+(+ 1 2 3 4 5)
+(* 5 4 3)
 
 ;; ========================================
 ;; Strings
@@ -109,7 +109,7 @@ training.exercises.ex02-using-data-types/failed-protagonist-names
 
 ;; You try:
 ;; * upper-case a line from your favorite song
-
+(str/upper-case "Welcome to the internet")
 
 
 ;; ========================================
@@ -164,8 +164,9 @@ training.exercises.ex02-using-data-types/failed-protagonist-names
 ;; * Use get to retrieve the name map
 ;; * Use get-in to get just the first name
 ;; * Use assoc-in to 'change' the first name
-
-
+(def fullname {:first "William" :last "Edmisten"})
+(def data {:name fullname})
+data
 
 ;; ========================================
 ;; Vectors
@@ -190,8 +191,11 @@ training.exercises.ex02-using-data-types/failed-protagonist-names
 ;; * take 
 ;; * assoc
 ;; * nth
-
-
+(first [1 2 3])
+(rest [1 2 3])
+(take 2 [1 2 3])
+(assoc [1 2 3] 0 4)
+(nth [1 2 3] 2)
 
 ;; ========================================
 ;; Exercise: Points
