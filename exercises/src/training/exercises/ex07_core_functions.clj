@@ -58,7 +58,8 @@
 ;; * Use reduce to select the largest number from a vector
 ;; * Implement map in terms of first, rest, and cons
 
-
+(filter #(> % 3) (map inc [1 2 3 4]))
+(reduce max [1 2 3 4 5])
 
 ;; ========================================
 ;; Function functions
@@ -102,8 +103,20 @@
 ;; * Implement complement
 ;; * Implement partial
 ;;  Hint: use apply
+(defn complement'
+  [f1]
+  (fn [x] (not (f1 x))))
+(def new-odd? (complement' even?))
 
+(new-odd? 3)
+(new-odd? 2)
 
+(defn partial'
+  [f1 & args]
+  (fn [& new-args] (apply f1 (concat args new-args))))
+
+(def part (partial' + 3))
+(part 3)
 
 ;; ========================================
 ;; Laziness
@@ -125,3 +138,6 @@
 
 ;; You try:
 ;; * Create a lazy sequence of all even numbers
+(filter #(= (mod % 2) 0) (range))
+
+(take 10 (filter #(= (mod % 2) 0) (range)))
